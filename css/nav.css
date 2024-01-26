@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+    text-decoration: none;
+    
+}
+
+a{
+    color: #000;
+}
+
+/* ===== Colours ===== */
+:root{
+    --body-color: #E4E9F7;
+    --nav-color: #4f86e1;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+
+body{
+    height: 100vh;
+    background-image: linear-gradient( 180deg,  #8fcdef49 26.8%, #4f86e1  120.1% );
+    align-content: center;
+}
+
+body.dark{
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --search-bar: #242526;
+    --footer-col: #242526;
+}
+/*END OF BODY*/
+
+/*navigation bar*/
+nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width:100%;
+    background-color: var(--nav-color);
+    z-index: 100 ;
+    
+}
+
+body.dark nav{
+    border: 1px solid #393838;
+
+}
+
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    
+  
+}
+
+.menu .logo-toggle{
+    display: none;
+    text-decoration: none;
+}
+/*END OD NAVIGATION BAR*/
+
+/*Search toggle*/
+.nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+/*END OF SEARCH TOGGLE*/
+
+/*Navbarlinks*/
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a{
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 100%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before{
+    opacity: 1;
+
+}
+/*END OF NAVBARlinks*/
+
+/*sun and moon*/
+.dark-light i,
+.searchToggle i{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon{
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/*END OD SUN AND MOON*/
+/*RESPONSIVE*/
+@media (max-width: 1368px) {
+    nav .nav-bar{
+        width: 1000px;
+    }
+}
+
+@media (max-width: 790px) {
+    nav .nav-bar{
+        width: 500px;
+    }
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu{
+        left: -0%;
+    }
+
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .siderbarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}
+/*END*/
+
+/*dropdown Profile*/
+.navbar .nav_right > ul{
+	display: flex;
+	align-items: center;
+    text-decoration: none;
+}
+
+.navbar .nav_right ul li.nr_li{
+
+    text-decoration: none!important;
+	margin-left: 25px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 15px;
+	position: relative;
+}
+
+ul{
+    list-style: none;
+}
+
+.navbar .nav_right ul li.nr_li:hover {
+    color: #cefffc;
+    text-decoration: none;
+}
+
+.navbar .nav_right ul li img{
+	width: 40px;
+    height: 40px;
+	vertical-align: middle;
+    border-radius: 50%;
+}
+
+.navbar .nav_right ul li .button{
+    background-color: white;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+}
+.navbar .nav_right ul li .button:hover{
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #F2F2F2;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.navbar .dd_menu {
+    position: absolute;
+    right: -25px;
+    top: 47px;
+    display: flex;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+    display: none;
+    
+}
+
+.navbar .dd_menu .dd_left{
+	background: #4f86e1;
+	padding: 15px 20px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.navbar .dd_menu .dd_left li{
+	color: #fff;
+    
+}
+
+.navbar .dd_menu .dd_right{
+	padding: 15px 20px;
+    
+
+}
+
+.navbar .dd_menu li{
+	margin-bottom: 10px;
+	color: #000000;
+    font-weight: 500;
+}
+
+.navbar .dd_menu:before{
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 30px;
+	border: 10px solid;
+	border-color: transparent transparent #fff transparent;
+}
+
+.navbar .dd_main.active .dd_menu{
+	display: flex;
+}
+
+/*END OF DROP DOWN*/
+
+
+  
+

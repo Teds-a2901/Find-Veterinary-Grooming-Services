@@ -1,0 +1,246 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --glass-bg: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3)
+  );
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient( 180deg,  #8fcdef49 26.8%, #4f86e1  120.1% );
+}
+.container{
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    background: var(--glass-bg);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    height: 100;
+
+}
+.container header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+}
+.container form .form{
+    position: absolute;
+    transition: 0.3s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.container form .fields{
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: auto;
+}
+form .fields .input-field{
+    display: flex;
+    width: 98%;
+    height: 100%;
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.fields .input-field input, select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+    margin-top: -1rem;
+}
+.input-field input, textarea{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 2%;
+    margin: 8px 0;
+    width: 100%;
+    resize: none;
+}
+.input-field select:focus{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.details .app-button{
+    background-color: #4f86e1;
+    width: 100px;
+    margin:0 20px;
+    display:inline-block;
+    line-height: 40px;
+	border-radius: 5px;
+    border: 1px solid #4f86e1;
+	color: #fff;
+	font-weight: 600;
+	margin-top: 10px;
+    
+}
+.row{
+  
+  margin-left:-5px;
+  margin-right:-5px;
+}
+.container form .app-button:hover{
+	background-color: #3567b8;
+}
+@media  (max-width: 1366px) {
+    .container {
+       margin-bottom:9%;
+   }
+}
+@media  (max-width: 1024px) {
+    .container {
+       margin-bottom: 50%;
+   }
+}
+@media  (max-width: 912px) {
+     .container {
+        margin-bottom: 50%;
+    }
+}
+@media (max-width: 768px) {
+    .container{
+        margin-top: 20%;
+    }
+}
+@media (max-width: 750px) {
+    .container form{
+        overflow-y: scroll;
+    }
+    .container form::-webkit-scrollbar{
+       display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 550px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+    .rating {
+        margin-left: 30%;
+        margin-right: auto;
+      }
+}
+@media (max-width: 500px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+    .rating {
+        margin-left: 20%;
+        margin-right: auto;
+      }
+}
+@media (max-width: 486px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+    form .rating {
+        margin-left: 10%;
+      }
+}
+@media (max-width: 414px) {
+    .container{
+        margin-top: 27%;
+    }
+    .container .rating__star{
+        font-size: 30px;
+    }
+}
+@media (max-width: 375px) {
+    .container{
+        margin-top: 10%;
+    }
+    form .fields .input-field{
+        width: 100%;
+    }
+    form .rating {
+        margin-left: 3%; 
+      }
+      .container .rating__star{
+        font-size: 30px;
+    }
+}
+@media (max-width: 360px) {
+    .container{
+        margin-top: 25%;
+    }
+}
+/* --------- STARS ----------*/
+.rating__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5em;
+ 
+}
+.rating__emoji{
+    font-size: 40px;
+    margin-bottom: 2px;
+    margin-top: -3rem;
+  }
+.rating__text{
+  font-size: 17px;
+  color: #4f86e1;
+  font-weight: 500;
+  margin-bottom: 1px;
+  margin-top: -0.1rem;
+}
+
+.rating__stars{
+  display: flex;
+  flex-direction: row-reverse;
+  
+}
+
+.rating__star{
+  font-size: 3rem;
+  color: #fff;
+
+  transition: all .2s ease;
+}
+
+.rating__star:hover,
+.rating__star:hover ~ .rating__star{
+  color: rgb(228, 224, 18);
+}
+
+.active{
+  color: rgb(228, 224, 18);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}

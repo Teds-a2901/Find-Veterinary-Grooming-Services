@@ -1,0 +1,131 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    background-color: #f2f2f2;
+
+}
+/* WARNING FOR EMTY FIELD */
+.show2{
+    z-index: 100;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 20px 35px 20px 25px;
+    box-shadow: 10px 5px 10px 10px rgba(0,0,0,0.1);
+    border-left: 6px solid #ff0000 ;
+    overflow: hidden;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.show2.active{
+    transform: translateX(0%);
+}
+
+.show2 .show2-content{
+    display: flex;
+    align-items: center;
+}
+
+.show2-content .fa-triangle-exclamation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    background-color: #ff0000 ;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.show2-content .message2{
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.message2 .text{
+    font-size: 20px;
+    font-weight: 400;;
+    color: #666666;
+}
+
+.message2 .text.text-1{
+    font-weight: 600;
+    color: #333;
+}
+
+.show2 .close2{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.show2 .close2:hover{
+    opacity: 1;
+}
+
+.show2 .progress2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #ddd;
+}
+
+.show2 .progress2:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ff0000 ;
+}
+
+.progress2.active:before{
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    100%{
+        right: 100%;
+    }
+}
+
+button{
+    padding: 12px 20px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background-color: #ff0000 ;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: #ff0000 ;
+}
+
+.toast.active ~ button{
+    pointer-events: none;
+}
+
