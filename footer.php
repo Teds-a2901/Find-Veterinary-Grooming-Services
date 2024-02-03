@@ -21,9 +21,9 @@
       <div class="link-boxes">
         <ul class="box">
           <li class="link_name">Developers</li>
-          <li><a href="https://www.facebook.com/BryanPaolo.Sausa16" target="_blank">Sausa, Bryan Paolo A.</a></li>
-          <li><a href="https://www.facebook.com/igop.dan23" target="_blank">Serrano, Dan Eidref V.</a></li>
-          <li><a href="https://www.facebook.com/Qanna789/" target="_blank">Tedra, Mark V.</a></li>
+          <li><a href="https://www.facebook.com/BryanPaolo.Sausa16" target="_blank">Sausa, Bryan Paolo A</a></li>
+          <li><a href="https://www.facebook.com/igop.dan23" target="_blank">Serrano, Dan Eidref V</a></li>
+          <li><a href="https://www.facebook.com/Qanna789/" target="_blank">Tedra, Mark V</a></li>
         </ul>
         <ul class="box">
           <li class="link_name">Get Help</li>
